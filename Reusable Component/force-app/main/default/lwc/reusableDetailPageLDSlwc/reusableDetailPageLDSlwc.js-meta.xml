@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="title" label="Title" type="String" default="Contact Information"/>
+            <property name="object" label="object" type="String" default="Contact"/>
+            <property name="columns" label="Columns" type="Integer" min="1" max="6" default="2"/>
+            <property name="dynamicFields" label="Fields To Display" type="String" default="Phone,MobilePhone"/>
+            <property name="phoneFields" label="Phone Fields To Display" type="String" default="Phone,MobilePhone"/>
+            <property name="phoneFieldsFetch" label="Phone Fields To Display" type="String" default="Phone,MobilePhone"/>
+            <property name="displayMode" label="Read or Edit Mode" type="String" default="view" datasource="view, edit, readonly"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,26 @@
+<template>
+    <lightning-card 
+    title={title}    >    
+        <lightning-record-form 
+               record-id = {recordId}
+               object-api-name = {object}
+               fields = {recFields}
+               columns = {columns}
+               mode = {displayMode} onload={handleOnLoad}
+               record-type-id = {rectypeId}
+               > 
+            </lightning-record-form>  
+            <form class=""> 
+                <div role="list" class="slds-form">
+                    <div class="slds-grid slds-gutters_small"> 
+                    <template for:each={phoneFieldsVal} for:item="item">
+                        <div role="listitem" class={className} key={item.label}>  
+                                    <span class="slds-form-element__label">{item.label}</span>
+                                    <div class=""> 
+                            <lightning-click-to-dial class="slds-border_bottom slds-form-element__static" record-id={recordId} key={item.label}
+                            value={item.value}></lightning-click-to-dial>   
+                        </div></div>  
+                    </template>
+            </div></div></form>
+    </lightning-card>
+</template>
